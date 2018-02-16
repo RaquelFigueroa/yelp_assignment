@@ -2,15 +2,15 @@
 
 **Name of your app** is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
-- [ ] Table rows for search results should be dynamic height according to the content height. (3pt)
-- [ ] Custom cells should have the proper Auto Layout constraints. (+5pt)
-- [ ] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does). (+2pt)
+- [x] Table rows for search results should be dynamic height according to the content height. (3pt)
+- [x] Custom cells should have the proper Auto Layout constraints. (+5pt)
+- [x] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does). (+2pt)
 
 The following **stretch** features are implemented:
 
@@ -37,11 +37,11 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Auto layout has definitely been a challenge. When first adding constraints, the constraint lines were red. I started over and the newly added constraints were blue. Other times I would add a constraint, and it would be aligned to the margin, not the nearest element as I had expected. There was a lot of starting over and re-doing constraints. I do believe I am understanding more about constraints and auto layout with this additional practice.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright 2016 Timothy Lee
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
