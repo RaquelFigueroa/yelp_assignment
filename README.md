@@ -1,8 +1,8 @@
-# Project 3 - *Name of App Here*
+# Project 3 - *Yelp*
 
-**Name of your app** is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
+**Yelp** is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
 
-Time spent: **6** hours spent in total
+Time spent: **10** hours spent in total
 
 ## User Stories
 
@@ -14,7 +14,7 @@ The following **required** functionality is completed:
 
 The following **stretch** features are implemented:
 
-- [ ] Infinite scroll for restaurant results. (+3pt)
+- [x] Infinite scroll for restaurant results. (+3pt)
 - [ ] Implement map view of restaurant results. (+3pt)
 - [ ] Implement the restaurant detail page. (+2pt)
 
@@ -24,8 +24,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. Infinite scrolling was definitely a challenging part of this assignment. I would like to discuss more about how to properly implement infinite scrolling.
+2. I would also like to discuss what sorts of resources classmates find helpful when working with these assignments and labs.
 
 ## Video Walkthrough
 

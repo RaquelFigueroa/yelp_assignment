@@ -8,10 +8,13 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
     
     var businesses: [Business]!
     var searchBar: UISearchBar!
+    
+    var isMoreDataLoading = false
+    var offset = 0
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,9 +42,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
                     print(business.address!)
                 }
             }
-            
-            }
-        )
+        })
         
         /* Example of Yelp search with more search options specified
          Business.searchWithTerm("Restaurants", sort: .distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: Error!) -> Void in
@@ -76,14 +77,26 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         return cell
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (!isMoreDataLoading) {
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            if (scrollView.contentOffset.y > scrollOffsetThreshold && tableView.isDragging) {
+                isMoreDataLoading = true
+                self.offset = self.offset + 1
+                loadMoreData()
+            }
+        }
+    }
     
+    func loadMoreData() {
+        self.offset = self.offset + 20
+
+        Business.searchWithTerm(term: "Thai", offset: offset, completion: { (businesses: [Business]?, error: Error? ) -> Void in
+            self.businesses.append(contentsOf: businesses!)
+            self.isMoreDataLoading = false
+            self.tableView.reloadData()
+        })
+    }
 }
